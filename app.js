@@ -19,7 +19,7 @@ async function processLineByLine() {
                     insideString = !insideString;
                 }
 
-                if (!insideString && character == '/' && !insideString && i + 1 < line.length && line.charAt(i + 1) == '/') {
+                if (!insideString && character == '/' &&  i + 1 < line.length && line.charAt(i + 1) == '/') {
                     commentFound = true;
                 }
 
