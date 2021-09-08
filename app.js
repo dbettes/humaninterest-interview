@@ -20,7 +20,7 @@ async function processLineByLine() {
                 }
 
                 if (!insideString && character == '/' && !insideString && i + 1 < line.length && line.charAt(i + 1) == '/') {
-                        commentFound = true;
+                    commentFound = true;
                 }
 
                 if (!commentFound) {
