@@ -1,9 +1,11 @@
 const fs = require('fs');
 const readline = require('readline');
 
-async function processLineByLine() {
-    const fileStream = fs.createReadStream('sample.json');
+async function processLineByLine(input) {
+    const fileStream = fs.createReadStream(input);
     const rl = readline.createInterface({ input: fileStream, crlfDelay: Infinity });
+
+
 
     let result = "";
 
@@ -15,7 +17,7 @@ async function processLineByLine() {
             for (var i = 0; i < line.length; i++) {
                 let character = line.charAt(i);
 
-                if (character == '"') {
+                if (character == '"' && line.charAt(i-1) != '\\') {
                     insideString = !insideString;
                 }
 
@@ -34,7 +36,9 @@ async function processLineByLine() {
         }
     }
 
+    console.log(`Output for ${input}:`);
     console.log(result);
 }
 
-processLineByLine();
+processLineByLine('exampleInput/sample.json');
+processLineByLine('exampleInput/sample2.json');

@@ -1,0 +1,6 @@
+{ // comment here 
+    "key1": "value1", /// hey look, a comment
+    "key2": "// this comment is okay",
+    "urls": ["{\"root\": \"https://humaninterest.com\"}"]
+} //nospaceonthiscomment
+// another comment here "
