@@ -1,0 +1,7 @@
+{ /* this is a
+     multi-line
+     comment */
+    "key1": "value1", /// hey look, a comment
+    "key2": "// this comment is okay",
+    "urls": ["https://humaninterest.com"]
+}
