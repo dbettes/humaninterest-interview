@@ -1,9 +1,11 @@
-const fs = require('fs');
-const readline = require('readline');
+import { createReadStream } from 'fs'; 'fs';
+import { createInterface } from 'readline'
+//const fs = require('fs');
+//const readline = require('readline');
 
-async function removeComments(input) {
-    const fileStream = fs.createReadStream(input);
-    const rl = readline.createInterface({ input: fileStream, crlfDelay: Infinity });
+async function removeComments(input: string) {
+    const fileStream = createReadStream(input);
+    const rl = createInterface({ input: fileStream, crlfDelay: Infinity });
 
     let result = "";
     let multilineFound = false;
